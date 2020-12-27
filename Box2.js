@@ -1,0 +1,30 @@
+class Box2 extends BaseClass {
+    constructor(x, y, width, height){
+      super(x,y,width,height);
+      this.Visiblity = 255;
+    }
+    display(){ 
+      fill(230,170,195);
+
+      if(this.body.speed < 3){
+        super.display();
+        var angle = this.body.angle;
+      var pos= this.body.position;
+      push();
+      translate(pos.x, pos.y);
+      rotate(angle);
+      rectMode(CENTER);
+      rect(0,0, this.width, this.height);
+      pop();
+       }
+      else{
+      World.remove(world, this.body);
+      push();
+      this.Visiblity = this.Visiblity - 5;
+      pop();
+       
+       }
+  
+      
+      }
+  };
